@@ -1,6 +1,5 @@
-import { CheckCircleIcon, SettingsIcon } from '@chakra-ui/icons';
-import { Heading, VStack, List, ListIcon, ListItem, Box, Flex, Image, Button, LinkBox, LinkOverlay } from '@chakra-ui/react';
-import { Table, Thead, Tbody, Tfoot, Tr, Th, Td, TableCaption, TableContainer } from '@chakra-ui/react'
+import { Box, Flex, Image, Button } from '@chakra-ui/react';
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer } from '@chakra-ui/react'
 
 const Home = () => {
     const tokens = [
@@ -52,7 +51,7 @@ const Home = () => {
     ]
 
     function handleRowClick(token: string) {
-        alert("Clicked on '" + token + "'")
+        console.log("Clicked on '" + token + "'")
     }
 
     const result = [];
