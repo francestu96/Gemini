@@ -1,5 +1,5 @@
 import { Box, Flex, Image, Button } from '@chakra-ui/react';
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer } from '@chakra-ui/react'
+import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Heading } from '@chakra-ui/react'
 
 const Home = () => {
     const tokens = [
@@ -54,50 +54,51 @@ const Home = () => {
         console.log("Clicked on '" + token + "'")
     }
 
-    const result = [];
-
-    for (const token of tokens){
-        result.push(
-            <Tr onClick={() => handleRowClick(token.name)}>
-                <Td>
-                    <Flex>
-                        <Box flex="25">
-                            <Image src={token.logo} borderRadius="full" boxSize="50px"/>
-                        </Box>       
-                        <Box flex="75">
-                            {token.name}
-                            <Box>
-                                <Button colorScheme='blue' size="xs" mr={1}>BSC</Button>
-                                {
-                                    token.audited && <Button colorScheme='teal' size="xs">Audited</Button>
-                                }
-                            </Box>
-                        </Box>                          
-                    </Flex>
-                </Td>
-                <Td>{token.symbol}</Td>
-                <Td>{token.launch}</Td>
-                <Td isNumeric>{token.votes}</Td>
-            </Tr>
-        )
-    }
-
     return (
-        <TableContainer borderWidth='2px' borderRadius='lg' pl={4} pr={4}>
-            <Table variant='simple'>
-                <Thead>
-                    <Tr>
-                        <Th>Asset</Th>
-                        <Th>Symbol</Th>
-                        <Th>Launch</Th>
-                        <Th isNumeric>Votes</Th>
-                    </Tr>
-                </Thead>
-                <Tbody>
-                    {result}
-                </Tbody>
-            </Table>
-        </TableContainer>
+        <Box>
+            <Heading size="md" textAlign="center" marginBottom={6}>
+                Token List
+            </Heading>
+            <TableContainer borderWidth='2px' borderRadius='lg' pl={4} pr={4}>
+                <Table variant='simple'>
+                    <Thead>
+                        <Tr>
+                            <Th>Asset</Th>
+                            <Th>Symbol</Th>
+                            <Th>Launch</Th>
+                            <Th isNumeric>Votes</Th>
+                        </Tr>
+                    </Thead>
+                    <Tbody>
+                        {
+                            tokens.map(token => (
+                                <Tr onClick={() => handleRowClick(token.name)}>
+                                    <Td>
+                                        <Flex>
+                                            <Box flex="25">
+                                                <Image src={token.logo} borderRadius="full" boxSize="50px"/>
+                                            </Box>       
+                                            <Box flex="75">
+                                                {token.name}
+                                                <Box>
+                                                    <Button colorScheme='blue' size="xs" mr={1}>BSC</Button>
+                                                    {
+                                                        token.audited && <Button colorScheme='teal' size="xs">Audited</Button>
+                                                    }
+                                                </Box>
+                                            </Box>                          
+                                        </Flex>
+                                    </Td>
+                                    <Td>{token.symbol}</Td>
+                                    <Td>{token.launch}</Td>
+                                    <Td isNumeric>{token.votes}</Td>
+                                </Tr>
+                            ))
+                        }
+                    </Tbody>
+                </Table>
+            </TableContainer>
+        </Box>
     );
 };
 
