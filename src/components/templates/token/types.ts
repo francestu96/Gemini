@@ -1,5 +1,3 @@
-import { IError } from "utils/Errors";
-
 type TToken = {
   logo: string;
   name: string;
