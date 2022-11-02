@@ -32,4 +32,5 @@ type TTransaction = {
 };
 export interface ITransactions {
   transactions?: TTransaction[];
+  error?: string;
 }

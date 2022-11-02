@@ -1,4 +1,4 @@
-import { ISubNav } from '../SubNav/SubNav';
+import { ISubNav } from "components/elements/navigation/SubNav/SubNav";
 
 const NAV_LINKS: ISubNav[] = [
   { label: 'Home', href: '/' },

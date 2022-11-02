@@ -1,5 +1,6 @@
 import { Box, Flex, Image, Button } from '@chakra-ui/react';
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Heading } from '@chakra-ui/react'
+import { useRouter } from 'next/router';
 
 const Home = () => {
     const tokens = [
@@ -11,6 +12,7 @@ const Home = () => {
             audited: true,
             launch: '10/10/2022',
             votes: '500',
+            addr: '0x1'
         },
         {
             logo: '/token-logo.jpg',
@@ -20,6 +22,7 @@ const Home = () => {
             audited: true,
             launch: '10/10/2022',
             votes: '500',
+            addr: '0x2'
         },
         {
             logo: '/token-logo.jpg',
@@ -29,6 +32,7 @@ const Home = () => {
             audited: false,
             launch: '10/10/2022',
             votes: '500',
+            addr: '0x3'
         },
         {
             logo: '/token-logo.jpg',
@@ -38,6 +42,7 @@ const Home = () => {
             audited: false,
             launch: '10/10/2022',
             votes: '500',
+            addr: '0x4'
         },
         {
             logo: '/token-logo.jpg',
@@ -47,12 +52,16 @@ const Home = () => {
             audited: false,
             launch: '10/10/2022',
             votes: '500',
+            addr: '0x5'
         }
     ]
 
     function handleRowClick(token: string) {
-        console.log("Clicked on '" + token + "'")
+        console.log("Clicked on '" + token + "'");
+        router.push('/' + token)
     }
+
+    const router = useRouter();
 
     return (
         <Box>
@@ -72,7 +81,7 @@ const Home = () => {
                     <Tbody>
                         {
                             tokens.map(token => (
-                                <Tr onClick={() => handleRowClick(token.name)}>
+                                <Tr onClick={() => handleRowClick(token.addr)} key={token.addr}>
                                     <Td>
                                         <Flex>
                                             <Box flex="25">

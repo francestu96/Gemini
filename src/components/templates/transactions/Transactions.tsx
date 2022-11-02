@@ -15,7 +15,7 @@ import { FC, useEffect } from 'react';
 import { getEllipsisTxt } from 'utils/format';
 import { ITransactions } from './types';
 
-const Transactions: FC<ITransactions> = ({ transactions }) => {
+const Transactions: FC<ITransactions> = ({ transactions, error }) => {
   const hoverTrColor = useColorModeValue('gray.100', 'gray.700');
 
   useEffect(() => console.log('transactions: ', transactions), [transactions]);
@@ -64,7 +64,8 @@ const Transactions: FC<ITransactions> = ({ transactions }) => {
             </Table>
           </TableContainer>
         </Box>
-      ) : (
+      ) : error ? <Box>Connect your wallet</Box> : 
+      (
         <Box>Looks Like you do not have any transactions</Box>
       )}
     </>

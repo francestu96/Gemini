@@ -1,7 +1,7 @@
 import { useColorMode } from '@chakra-ui/react';
 import Image from 'next/image';
 
-const MoralisLogo = () => {
+const Logo = () => {
   const { colorMode } = useColorMode();
 
   return (
@@ -14,4 +14,4 @@ const MoralisLogo = () => {
   );
 };
 
-export default MoralisLogo;
+export default Logo;
