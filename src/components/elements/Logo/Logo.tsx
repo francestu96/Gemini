@@ -9,7 +9,7 @@ const Logo = () => {
       src={colorMode === 'dark' ? '/logo.png' : '/logo.png'}
       height={45}
       width={150}
-      alt="Moralis"
+      alt="Gemini"
     />
   );
 };

@@ -75,11 +75,18 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
   ]
 
-  const result = tokens;
+  const addr = context.params?.addr;
+  const result = tokens.find((x: any) => x.addr == addr?.toString());
+
+  if (!result) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: {
-      tokens: result,
+      token: result,
     },
   };
 };
