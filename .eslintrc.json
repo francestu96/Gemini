@@ -4,6 +4,7 @@
     "no-console": "off",
     "etc/no-commented-out-code": "off",
     "prefer-template": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "no-undef": "off"
   }
 }

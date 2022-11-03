@@ -3,3 +3,7 @@ tbody tr:hover {
     filter: brightness(120%);
     cursor: pointer;
 }
+
+.change-cursor:hover {
+  cursor: pointer;
+}

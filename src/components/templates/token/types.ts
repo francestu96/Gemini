@@ -4,7 +4,7 @@ type TToken = {
   symbol: string;
   chain: string;
   addr: string;
-  lauched: string;
+  launch: string;
   audited: boolean;
   votes: number;
 };

@@ -24,54 +24,54 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const tokens = [
     {
-        logo: '/token-logo.jpg',
-        name: 'Token Name 1',
-        symbol: 'TKN1',
-        chain: 1,
-        audited: true,
-        launch: '10/10/2022',
-        votes: '500',
-        addr: '0x1'
+      logo: '/token-logo.jpg',
+      name: 'Token Name 1',
+      symbol: 'TKN1',
+      chain: 'Ethereum',
+      audited: true,
+      launch: '10/10/2022',
+      votes: '500',
+      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A71'
     },
     {
-        logo: '/token-logo.jpg',
-        name: 'Token Name 2',
-        symbol: 'TKN2',
-        chain: 1,
-        audited: true,
-        launch: '10/10/2022',
-        votes: '500',
-        addr: '0x2'
+      logo: '/token-logo.jpg',
+      name: 'Token Name 2',
+      symbol: 'TKN2',
+      chain: 'Ethereum',
+      audited: true,
+      launch: '10/10/2022',
+      votes: '500',
+      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A72'
     },
     {
-        logo: '/token-logo.jpg',
-        name: 'Token Name 3',
-        symbol: 'TKN3',
-        chain: 1,
-        audited: false,
-        launch: '10/10/2022',
-        votes: '500',
-        addr: '0x3'
+      logo: '/token-logo.jpg',
+      name: 'Token Name 3',
+      symbol: 'TKN3',
+      chain: 'Ethereum',
+      audited: false,
+      launch: '10/10/2022',
+      votes: '500',
+      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A73'
     },
     {
-        logo: '/token-logo.jpg',
-        name: 'Token Name 4',
-        symbol: 'TKN4',
-        chain: 1,
-        audited: false,
-        launch: '10/10/2022',
-        votes: '500',
-        addr: '0x4'
+      logo: '/token-logo.jpg',
+      name: 'Token Name 4',
+      symbol: 'TKN4',
+      chain: 'Ethereum',
+      audited: false,
+      launch: '10/10/2022',
+      votes: '500',
+      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A74'
     },
     {
-        logo: '/token-logo.jpg',
-        name: 'Token Name 5',
-        symbol: 'TKN5',
-        chain: 1,
-        audited: false,
-        launch: '10/10/2022',
-        votes: '500',
-        addr: '0x5'
+      logo: '/token-logo.jpg',
+      name: 'Token Name 5',
+      symbol: 'TKN5',
+      chain: 'Ethereum',
+      audited: false,
+      launch: '10/10/2022',
+      votes: '500',
+      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A75'
     }
   ]
 
