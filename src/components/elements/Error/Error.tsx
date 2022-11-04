@@ -7,9 +7,7 @@ const Error = (props: any) => {
   return (
     <VStack border="2px" borderColor={hoverTrColor} borderRadius="xl" padding="0px 2em 2em 2em">
       <Image src={colorMode === 'dark' ? '/connect-dark.png' : '/connect-light.png'} boxSize="50%" alt="Connect Wallet First" marginBottom="2em"/>
-      <Text>
-        {props.msg}
-      </Text>
+      <Text dangerouslySetInnerHTML={{__html: props.msg}}></Text>
     </VStack>
   );
 };

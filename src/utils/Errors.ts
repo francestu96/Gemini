@@ -4,6 +4,6 @@ export interface IError {
 }
 
 export const Errors: IError = {
-    ConnectWallet: "Connect your Wallet first!",
+    ConnectWallet: "Connect your <b>Wallet</b> first!",
     Unknown: "Unknown Error..."
 } as const

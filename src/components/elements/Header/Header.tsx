@@ -1,12 +1,13 @@
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
-import { Box, Flex, HStack, IconButton, useColorModeValue, VStack } from '@chakra-ui/react';
+import { Box, Flex, HStack, IconButton, useColorModeValue, useColorMode, VStack } from '@chakra-ui/react';
 import { ColorModeButton, Logo, NavItem } from 'components/elements';
 import React, { useState } from 'react';
-import { ConnectButton } from '../ConnectButton';
+import { ConnectWallet } from "@thirdweb-dev/react";
 import NAV_LINKS from './paths';
 
 const Header = () => {
   const [display, changeDisplay] = useState('none')
+  const { colorMode } = useColorMode();
 
   return (
     <Box borderBottom="1px" borderBottomColor="chakra-border-color" p={'10px'}>
@@ -17,8 +18,8 @@ const Header = () => {
               <NavItem key={`link-${link.label}`} {...link} />
             ))}
           </HStack>
-          <HStack gap={'10px'}>
-            <ConnectButton />
+          <HStack gap={'10px'} fontSize="lg">
+            <ConnectWallet accentColor={colorMode === "dark" ? "#90cdf4" : "#3182ce"}/>
             <ColorModeButton />
           </HStack>
         </Flex>
@@ -50,7 +51,7 @@ const Header = () => {
         </Flex>
           <VStack gap={'15px'}>
             <HStack gap={'10px'}>
-              <ConnectButton />
+              <ConnectWallet accentColor={colorMode === "dark" ? "#90cdf4" : "#3182ce"}/>
               <ColorModeButton />
             </HStack>
             {NAV_LINKS.map((link) => (

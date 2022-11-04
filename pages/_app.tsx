@@ -1,18 +1,8 @@
 import { ChakraProvider } from '@chakra-ui/react';
-import { createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi';
+import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 import { extendTheme } from '@chakra-ui/react';
-import { publicProvider } from 'wagmi/providers/public';
-import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
-import './style.css'
-
-const { provider, webSocketProvider } = configureChains(defaultChains, [publicProvider()]);
-
-const client = createClient({
-  provider,
-  webSocketProvider,
-  autoConnect: true,
-});
+import "../styles/globals.css";
 
 const config = {
   initialColorMode: 'dark',
@@ -20,15 +10,14 @@ const config = {
 };
 
 const theme = extendTheme({ config });
+const activeChainId = ChainId.Goerli;
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <WagmiConfig client={client}>
-        <SessionProvider session={pageProps.session} refetchInterval={0}>
-          <Component {...pageProps} />
-        </SessionProvider>
-      </WagmiConfig>
+      <ThirdwebProvider desiredChainId={activeChainId}>
+        <Component {...pageProps} />
+      </ThirdwebProvider>
     </ChakraProvider>
   );
 };
