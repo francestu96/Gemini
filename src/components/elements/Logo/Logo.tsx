@@ -7,8 +7,8 @@ const Logo = () => {
   return (
     <Image
       src={colorMode === 'dark' ? '/logo.png' : '/logo.png'}
-      height={45}
-      width={150}
+      height={80}
+      width={190}
       alt="Gemini"
     />
   );

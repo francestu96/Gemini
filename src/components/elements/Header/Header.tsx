@@ -18,7 +18,7 @@ const Header = () => {
               <NavItem key={`link-${link.label}`} {...link} />
             ))}
           </HStack>
-          <HStack gap={'10px'} fontSize="lg">
+          <HStack gap={'10px'}>
             <ConnectWallet accentColor={colorMode === "dark" ? "#90cdf4" : "#3182ce"}/>
             <ColorModeButton />
           </HStack>
