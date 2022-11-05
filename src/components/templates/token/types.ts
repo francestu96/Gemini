@@ -10,5 +10,4 @@ type TToken = {
 };
 export interface IToken {
   token?: TToken;
-  error?: string
 }

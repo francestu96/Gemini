@@ -11,12 +11,14 @@ import {
   VStack,
   useToast
 } from '@chakra-ui/react';
+import { useAddress } from '@thirdweb-dev/react';
 import { Error } from 'components/elements/Error';
 import { FC } from 'react';
 import { Errors } from 'utils/Errors';
 import { IToken } from './types';
 
-const Token: FC<IToken> = ({ token, error }) => {
+const Token: FC<IToken> = ({ token }) => {
+  const address = useAddress();
   const toast = useToast();
   const boxColor = useColorModeValue('gray.200', 'gray.600');
   
@@ -30,7 +32,8 @@ const Token: FC<IToken> = ({ token, error }) => {
       <Heading size="lg" marginBottom={6}>
         Token Info
       </Heading>
-      {token ? (
+      {!address ? <Error msg={Errors.ConnectWallet}/> 
+       : token ? (
         <Box borderWidth='2px' borderRadius='lg' p="2em">
           <Flex align="center" justify="space-between">
             <HStack alignItems="top">
@@ -79,8 +82,7 @@ const Token: FC<IToken> = ({ token, error }) => {
             </Box>
           </Flex>
         </Box>
-      ) : error === Errors.ConnectWallet ? <Error msg={Errors.ConnectWallet}/> 
-        : <Error msg={Errors.Unknown}/>
+      ) : <Error msg={Errors.Unknown}/>
       }
     </>
   );

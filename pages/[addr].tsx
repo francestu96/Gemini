@@ -1,8 +1,6 @@
 import { Default } from 'components/layouts/Default';
 import { GetServerSideProps, NextPage } from 'next';
 import { IToken, Token } from 'components/templates/token';
-import { useAddress } from "@thirdweb-dev/react";
-import { Errors } from 'utils/Errors';
 
 const TokenPage: NextPage<IToken> = (props) => {
   return (
@@ -13,12 +11,6 @@ const TokenPage: NextPage<IToken> = (props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const address = useAddress();
-
-  if (!address) {
-    return { props: { error: Errors.ConnectWallet } };
-  }
-
   const tokens = [
     {
       logo: '/token-logo.jpg',
