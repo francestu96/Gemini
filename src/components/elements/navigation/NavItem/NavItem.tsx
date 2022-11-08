@@ -6,11 +6,11 @@ import { SubNav } from '../SubNav';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-const NavItem: FC<ISubNav> = ({ label, children, href }) => {
+const NavItem: FC<ISubNav> = ({ label, children, href, src }) => {
   const linkColor = useColorModeValue('gray.600', 'gray.400');
   const linkActiveColor = useColorModeValue('gray.800', 'white');
   const router = useRouter();
-  const isCurrentPath = router.asPath === href || (href !== '/' && router.pathname.startsWith(href || ''));
+  const isCurrentPath = router.asPath === href || (href !== '/' && router.pathname.startsWith(href || '') && !src);
 
   return (
     <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -30,13 +30,14 @@ const NavItem: FC<ISubNav> = ({ label, children, href }) => {
               <>
                 {label} <ChevronDownIcon />
               </>
-            ) : (
+            ) : src ? (
+                <Link target="_blank" href={src} _hover={{textDecoration: 'none'}}>
+                  {label}
+                </Link>
+            ) :
+            (
               <NextLink href={href || '/'} legacyBehavior>
-                <Link
-                  _hover={{
-                    textDecoration: 'none',
-                  }}
-                >
+                <Link _hover={{textDecoration: 'none'}}>
                   {label}
                 </Link>
               </NextLink>

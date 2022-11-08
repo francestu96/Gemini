@@ -2,10 +2,8 @@ import { ISubNav } from "components/elements/navigation/SubNav/SubNav";
 
 const NAV_LINKS: ISubNav[] = [
   { label: 'Home', href: '/' },
-  {
-    label: 'My Tokens',
-    href: '/mytokens',
-  },
+  { label: 'My Tokens', href: '/mytokens' },
+  { label: 'Whitepaper', src: './Gemini Dao - Whitepaper.pdf' },
   {
     label: 'Community',
     href: '#',

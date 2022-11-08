@@ -3,6 +3,7 @@ import { useColorModeValue, Stack, Flex, Box, Text, Link, Image } from '@chakra-
 
 export interface ISubNav {
   label: string;
+  src?: string;
   subLabel?: string;
   logo?: string;
   href?: string;
