@@ -1,5 +1,5 @@
-import { Default } from 'components/layouts/Default';
-import { Home } from 'components/templates/home';
+import { Default } from 'components/templates/Default';
+import { Home } from 'components/templates/Home';
 import type { NextPage } from 'next';
 
 const HomePage: NextPage = () => {

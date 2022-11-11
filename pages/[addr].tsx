@@ -1,6 +1,8 @@
-import { Default } from 'components/layouts/Default';
+import { Default } from 'components/templates/Default';
 import { GetServerSideProps, NextPage } from 'next';
-import { IToken, Token } from 'components/templates/token';
+import { IToken, Token } from 'components/templates/Token';
+import { getUser } from '../auth.config';
+import { Errors } from 'utils/Errors';
 
 const TokenPage: NextPage<IToken> = (props) => {
   return (
@@ -11,6 +13,11 @@ const TokenPage: NextPage<IToken> = (props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+  const user = await getUser(context.req);
+  if (!user) {
+    return { props: { error: Errors.ConnectWallet } };
+  }
+  
   const tokens = [
     {
       logo: '/token-logo.jpg',

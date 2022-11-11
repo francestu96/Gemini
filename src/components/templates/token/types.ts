@@ -1,3 +1,5 @@
+import { Errors } from "utils/Errors";
+
 type TToken = {
   logo: string;
   name: string;
@@ -10,4 +12,5 @@ type TToken = {
 };
 export interface IToken {
   token?: TToken;
+  error?: Errors;
 }

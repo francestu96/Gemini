@@ -11,11 +11,16 @@ const config = {
 
 const theme = extendTheme({ config });
 const activeChainId = ChainId.Goerli;
+const authConfig= {
+  domain: process.env.DOMAIN || "",
+  authUrl: "/api/auth",
+  loginRedirect: "/",
+}
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider resetCSS theme={theme}>
-      <ThirdwebProvider desiredChainId={activeChainId}>
+      <ThirdwebProvider desiredChainId={activeChainId} authConfig={authConfig}>
         <Component {...pageProps} />
       </ThirdwebProvider>
     </ChakraProvider>
