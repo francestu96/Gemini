@@ -1,4 +1,4 @@
-import { Default } from 'components/templates/default';
+import { Default } from 'components/templates/Default';
 import { Home } from 'components/templates/home';
 import type { NextPage } from 'next';
 
