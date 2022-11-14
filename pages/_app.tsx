@@ -12,7 +12,7 @@ const config = {
 const theme = extendTheme({ config });
 const activeChainId = ChainId.Goerli;
 const authConfig= {
-  domain: process.env.DOMAIN || "",
+  domain: process.env.NEXT_PUBLIC_DOMAIN || "",
   authUrl: "/api/auth",
   loginRedirect: "/",
 }
