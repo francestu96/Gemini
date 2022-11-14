@@ -1,8 +1,8 @@
-import { Default } from 'components/templates/Default';
+import { Default } from 'components/templates/default';
 import { GetServerSideProps, NextPage } from 'next';
 import { getUser } from '../auth.config';
 import { Errors } from 'utils/Errors';
-import { IToken, Token } from 'components/templates/Token';
+import { IToken, Token } from 'components/templates/token';
 
 const TokenPage: NextPage<IToken> = (props) => {
   return (
