@@ -11,7 +11,7 @@ import {
   VStack,
   useToast
 } from '@chakra-ui/react';
-import { Error } from 'components/elements/error';
+import { Error } from 'components/elements/Error';
 import { FC } from 'react';
 import { Errors } from 'utils/Errors';
 import { IToken } from './types';
