@@ -1,4 +1,4 @@
-import { Default } from 'components/templates/default';
+import { Default } from 'components/templates/Default';
 import { GetServerSideProps, NextPage } from 'next';
 import { getUser } from '../auth.config';
 import { Errors } from 'utils/Errors';
