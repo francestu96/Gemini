@@ -10,7 +10,7 @@ const config = {
 };
 
 const theme = extendTheme({ config });
-const activeChainId = ChainId.Goerli;
+const activeChainId = parseInt(process.env.APP_CHAIN_ID || "1");
 const authConfig= {
   domain: process.env.NEXT_PUBLIC_DOMAIN || "",
   authUrl: "/api/auth",
