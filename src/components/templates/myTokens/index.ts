@@ -1,2 +1,1 @@
-export { default as Token } from './Token';
-export * from './types';
+export { default as MyTokens } from './MyTokens';
