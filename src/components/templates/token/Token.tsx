@@ -14,9 +14,9 @@ import {
 import { Error } from 'components/elements/Error';
 import { FC } from 'react';
 import { Errors } from 'utils/Errors';
-import { IToken } from './types';
+import { IToken } from 'utils/types';
 
-const Token: FC<IToken> = ({ token, error }) => {
+const Token: FC<IToken> = ({ token, user, error }) => {
   const toast = useToast();
   const boxColor = useColorModeValue('gray.200', 'gray.600');
   

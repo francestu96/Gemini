@@ -15,7 +15,7 @@ const TokenPage: NextPage<IToken> = (props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const user = await getUser(context.req);
   if (!user) {
-    return { props: { error: Errors.ConnectWallet } };
+    return { props: { error: Errors.SignIn } };
   }
   
   const tokens = [
@@ -83,6 +83,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       token: result,
+      user: user
     },
   };
 };

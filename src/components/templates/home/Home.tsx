@@ -3,61 +3,10 @@ import { Icon } from '@chakra-ui/react'
 import { IoIosRocket } from "react-icons/io";
 import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Heading } from '@chakra-ui/react'
 import { useRouter } from 'next/router';
+import { ITokens } from 'utils/types';
+import { FC } from 'react';
 
-const Home = () => {
-  const tokens = [
-    {
-      logo: '/token-logo.jpg',
-      name: 'Token Name 1',
-      symbol: 'TKN1',
-      chain: 'Ethereum',
-      audited: true,
-      launch: '10/10/2022',
-      votes: '500',
-      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A71'
-    },
-    {
-      logo: '/token-logo.jpg',
-      name: 'Token Name 2',
-      symbol: 'TKN2',
-      chain: 'Ethereum',
-      audited: true,
-      launch: '10/10/2022',
-      votes: '500',
-      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A72'
-    },
-    {
-      logo: '/token-logo.jpg',
-      name: 'Token Name 3',
-      symbol: 'TKN3',
-      chain: 'Ethereum',
-      audited: false,
-      launch: '10/10/2022',
-      votes: '500',
-      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A73'
-    },
-    {
-      logo: '/token-logo.jpg',
-      name: 'Token Name 4',
-      symbol: 'TKN4',
-      chain: 'Ethereum',
-      audited: false,
-      launch: '10/10/2022',
-      votes: '500',
-      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A74'
-    },
-    {
-      logo: '/token-logo.jpg',
-      name: 'Token Name 5',
-      symbol: 'TKN5',
-      chain: 'Ethereum',
-      audited: false,
-      launch: '10/10/2022',
-      votes: '500',
-      addr: '0x4Dd942bAa75810a3C1E876e79d5cD35E09C97A75'
-    }
-  ]
-
+const Home: FC<ITokens> = ({ tokens }) => {   
   function handleRowClick(token: string) {
     router.push('/' + token)
   }
@@ -81,7 +30,7 @@ const Home = () => {
           </Thead>
           <Tbody>
             {
-              tokens.map(token => (
+              tokens?.map(token => (
                 <Tr onClick={() => handleRowClick(token.addr)} key={token.addr}>
                   <Td>
                     <Flex>
