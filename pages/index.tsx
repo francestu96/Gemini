@@ -14,7 +14,7 @@ const HomePage: NextPage<ITokens> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const db = (await client_db).db(process.env.DB_NAME);
+    const db = (await client_db).db();
     const tokens = await db.collection("tokens").find({}, {projection:{_id:0}}).toArray();
 
     return {
